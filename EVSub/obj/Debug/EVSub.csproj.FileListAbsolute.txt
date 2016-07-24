@@ -1,0 +1,20 @@
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\bin\Debug\EVSub.exe.config
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\bin\Debug\EVSub.exe
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\bin\Debug\EVSub.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\bin\Debug\Interop.WMPLib.dll
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\bin\Debug\AxInterop.WMPLib.dll
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\obj\Debug\EVSub.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\obj\Debug\Interop.WMPLib.dll
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\obj\Debug\AxInterop.WMPLib.dll
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\obj\Debug\EVSub.csproj.ResolveComReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\obj\Debug\EVSub.Form1.resources
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\obj\Debug\EVSub.Properties.Resources.resources
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\obj\Debug\EVSub.csproj.GenerateResource.Cache
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\obj\Debug\EVSub.exe
+c:\users\administrator\documents\visual studio 2015\Projects\EVSub\EVSub\obj\Debug\EVSub.pdb
+C:\Users\Quang\Downloads\EVSub\EVSub\bin\Debug\EVSub.exe.config
+C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\Interop.WMPLib.dll
+C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\EVSub.csproj.ResolveComReference.cache
+C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\EVSub.exe
+C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\EVSub.pdb
