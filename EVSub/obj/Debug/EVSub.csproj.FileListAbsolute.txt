@@ -18,3 +18,11 @@ C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\EVSub.csproj.ResolveComReference.cache
 C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\EVSub.exe
 C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\EVSub.pdb
+C:\Users\Quang\Downloads\EVSub\EVSub\bin\Debug\EVSub.exe
+C:\Users\Quang\Downloads\EVSub\EVSub\bin\Debug\EVSub.pdb
+C:\Users\Quang\Downloads\EVSub\EVSub\bin\Debug\Interop.WMPLib.dll
+C:\Users\Quang\Downloads\EVSub\EVSub\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\EVSub.csprojResolveAssemblyReference.cache
+C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\EVSub.Form1.resources
+C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\EVSub.Properties.Resources.resources
+C:\Users\Quang\Downloads\EVSub\EVSub\obj\Debug\EVSub.csproj.GenerateResource.Cache
