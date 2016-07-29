@@ -6,17 +6,18 @@ using System.Collections.Generic;
 using WMPLib;
 using SubtitlesParser;
 using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace EVSub
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormMain_Load(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "All Videos Files |*.wmv; *.avi; *.flv; *.mkv; *.mp4; *.ts; *.webm|All Files|*.*";
             openFileDialog1.FilterIndex = 1;
@@ -27,9 +28,19 @@ namespace EVSub
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                Debug.WriteLine("File video = " + openFileDialog1.FileName);
-                WMPMain.URL = openFileDialog1.FileName;
-                WMPMain.Ctlcontrols.play();
+                try
+                {
+                    Debug.WriteLine("File video = " + openFileDialog1.FileName);
+                    WMPMain.URL = openFileDialog1.FileName;
+                    WMPMain.Ctlcontrols.play();
+
+                    this.Text = "EVSub - " + Path.GetFileName(openFileDialog1.FileName);
+                }
+                catch(Exception ex)
+                {
+                    this.Text = "EVSub";
+                    MessageBox.Show("Can not open this file, error = " + ex);
+                }
 
                 rtbSub.Text = "";
                 var parser = new SubtitlesParser.Parsers.SubParser();
@@ -98,7 +109,8 @@ namespace EVSub
             if (index <= 0)
             {
                 return;
-            }else
+            }
+            else
             {
                 index--;
             }
@@ -116,6 +128,7 @@ namespace EVSub
         /// </summary>
         private void boldCurrentSub()
         {
+            rtbSystemUpdating = true;
             rtbSub.Select(boldStartSelect, boldEndSelect - boldStartSelect);
             rtbSub.SelectionFont = regularFont;
             boldStartSelect = rtbSub.GetFirstCharIndexFromLine(subFirstLine[currentSubIndex]);
@@ -132,6 +145,7 @@ namespace EVSub
                 rtbSub.Select(0, 0);
                 rtbSub.ScrollToCaret();
             }
+            rtbSystemUpdating = false;
         }
         private List<SubtitleItem> subItems;//Danh sách sub
         private int[] subFirstLine;//Lưu STT dòng đầu tiên của mỗi sub, phần tử cuối lưu tổng số dòng của sub
@@ -139,7 +153,43 @@ namespace EVSub
         private Font regularFont = new Font("Tahoma", 12, FontStyle.Regular);
         private Font boldFont = new Font("Tahoma", 12, FontStyle.Bold);
 
+        private EVDictionary evdic = new EVDictionary(@"C:\anhviet109K.txt");//Từ điểm anh việt
+        private bool rtbSystemUpdating = false;//Dùng để phân biệt select của hệ thông và người dùng.
         private int boldStartSelect;//Lưu đoạn đang được bôi đậm
         private int boldEndSelect;//Lưu đoạn đang được bôi đậm
+
+        private void rtbSub_SelectionChanged(object sender, EventArgs e)
+        {
+            string word = Regex.Replace(rtbSub.SelectedText, "[^a-zA-Z]+", "");
+            word = word.ToLower();
+            if (rtbSystemUpdating == false && word.Length > 0)
+            {
+
+                string mean = evdic.findWordInEvDic(word);
+                if (mean != null)
+                {
+                    tbWord.Text = word;
+                    rtbMean.Text = mean;
+                }
+                else
+                {
+                    tbWord.Text = rtbSub.SelectedText;
+                }
+            }
+        }
+
+        private void butTranslate_Click(object sender, EventArgs e)
+        {
+            string word = tbWord.Text.ToLower();
+            if (word.Length > 0)
+            {
+                string mean = evdic.findWordInEvDic(word);
+                if (mean != null)
+                {
+                    tbWord.Text = word;
+                    rtbMean.Text = mean;
+                }
+            }
+        }
     }
 }
