@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -131,7 +132,7 @@ namespace SubtitlesParser.Parsers
                 }
                 catch(Exception ex)
                 {
-                    //Console.WriteLine(ex);
+                    Debug.WriteLine(ex);
                 }
             }
 
