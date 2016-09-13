@@ -5,6 +5,7 @@ using System.IO;
 using System.Net;
 using System.Data.Entity.Design.PluralizationServices;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace EVSub
 {
@@ -45,7 +46,7 @@ namespace EVSub
             }
             else
             {
-                return "Google Translate" + Environment.NewLine + GoogleTranslate(text);
+                return "Google Translate" + Environment.NewLine + mean;
             }
         }
         private Dictionary<string, string> evdic = new Dictionary<string, string>();
@@ -162,14 +163,14 @@ namespace EVSub
             return null;
         }
 
-        public EVDictionary(string fileName)
+        public EVDictionary(string fileName = null)
         {
-            using (StreamReader sr = File.OpenText(fileName))
+            if (fileName == null)
             {
-                string s = String.Empty;
+                string[] result = Regex.Split(EVSub.Properties.Resources.anhviet109K, "\r\n|\r|\n");
                 string word = "@";
                 string mean = "@";
-                while ((s = sr.ReadLine()) != null)
+                foreach (string s in result)
                 {
                     if (s.Length != 0)
                     {
@@ -188,6 +189,34 @@ namespace EVSub
                     }
                 }
                 evdic.Add(word, mean);
+            }
+            else
+            {
+                using (StreamReader sr = File.OpenText(fileName))
+                {
+                    string s = String.Empty;
+                    string word = "@";
+                    string mean = "@";
+                    while ((s = sr.ReadLine()) != null)
+                    {
+                        if (s.Length != 0)
+                        {
+                            string wordtmp = getWord(s);
+                            if (wordtmp != null)
+                            {
+                                mean = mean.Replace("=", "   ").Replace("+", ":").Replace("!", "   ");//TODO Làm cho đẹp hơn
+                                evdic.Add(word, mean);
+                                word = wordtmp;
+                                mean = s.Substring(1);
+                            }
+                            else
+                            {
+                                mean += s + Environment.NewLine;
+                            }
+                        }
+                    }
+                    evdic.Add(word, mean);
+                }
             }
         }
     }

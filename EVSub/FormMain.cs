@@ -18,7 +18,7 @@ namespace EVSub
         private Font regularFont = new Font("Tahoma", 12, FontStyle.Regular);
         private Font boldFont = new Font("Tahoma", 12, FontStyle.Bold);
 
-        private EVDictionary evdic = new EVDictionary(@"C:\anhviet109K.txt");//Từ điểm anh việt
+        private EVDictionary evdic = new EVDictionary();//Từ điểm anh việt
         private bool rtbSubSystemUpdating = false;//Dùng để phân biệt select của hệ thông và người dùng.
         private int boldStartSelect;//Lưu đoạn đang được bôi đậm
         private int boldEndSelect;//Lưu đoạn đang được bôi đậm

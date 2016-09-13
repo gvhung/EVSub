@@ -61,6 +61,30 @@ namespace EVSub.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @a /ei, ə/
+        ///*  danh từ,  số nhiều as,  a&apos;s
+        ///- (thông tục) loại a, hạng nhất, hạng tốt nhất hạng rất tốt
+        ///=his health is a+ sức khoẻ anh ta vào loại a
+        ///- (âm nhạc) la
+        ///=a sharp+ la thăng
+        ///=a flat+ la giáng
+        ///- người giả định thứ nhất; trường hợp giả định thứ nhất
+        ///=from a to z+ từ đầu đến đuôi, tường tận
+        ///=not to know a from b+ không biết tí gì cả; một chữ bẻ đôi cũng không biết
+        ///*  mạo từ
+        ///- một; một (như kiểu); một (nào đó)
+        ///=a very cold day+ một ngày rất lạnh
+        ///=a dozen+ một tá
+        ///=a few+ một ít
+        ///=all of a size+ tất cả cùng [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string anhviet109K {
+            get {
+                return ResourceManager.GetString("anhviet109K", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Google_Translate_Icon {
