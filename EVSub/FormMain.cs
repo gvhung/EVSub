@@ -182,6 +182,10 @@ namespace EVSub
         /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if(subItems == null)
+            {
+                return;
+            }
             int cp = Convert.ToInt32(WMPMain.Ctlcontrols.currentPosition * 1000);
             if (cp < subItems[0].StartTime
                 || cp > subItems[subItems.Count - 1].EndTime)
